@@ -24,6 +24,24 @@
       font-size: 18px;
       line-height: 1.6;
     }
+
+.heart {
+  position: fixed;
+  top: -10px;
+  font-size: 20px;
+  color: #ff6b9e;
+  animation: fall linear forwards;
+  opacity: 0.8;
+  pointer-events: none;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(110vh);
+    opacity: 0;
+  }
+}
+
   </style>
 </head>
 <body>
@@ -51,13 +69,13 @@
 
     <p>
       Please don’t leave me.
-      I choose you, today and every day 🤍
+      I choose you, today and every day 💗
     </p>
   </div>
 
-  <img src="loml .JPG">
-  <img src="photo2.JPG">
-  <img src="photo3.JPG">
+  <img src="loml .jpg">
+  <img src="photo2.jpg">
+  <img src="photo3.jpg">
 
 <p onclick="toggleMusic()" 
    style="cursor:pointer; color:#d63384;">
@@ -81,6 +99,28 @@
       music.pause();
     }
   }
+
+function createHeart() {
+  const hearts = ["🤍", "💗", "❤️", "💕", "💖"];
+  const heart = document.createElement("div");
+  heart.classList.add("heart");
+
+  heart.innerHTML = hearts[Math.floor(Math.random() * hearts.length)];
+
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.animationDuration = (3 + Math.random() * 3) + "s";
+  heart.style.fontSize = (16 + Math.random() * 20) + "px";
+
+  document.body.appendChild(heart);
+
+  setTimeout(() => {
+    heart.remove();
+  }, 6000);
+}
+
+
+setInterval(createHeart, 300);
+
 </script>
 
 
