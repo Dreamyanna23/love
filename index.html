@@ -29,13 +29,14 @@
 
 .heart {
   position: fixed;
-  top: -10px;
+  top: -20px;
+  z-index: 9999;   /* 🔥 VERY IMPORTANT */
   font-size: 20px;
-  color: #ff6b9e;
   animation: fall linear forwards;
-  opacity: 0.8;
+  opacity: 0.9;
   pointer-events: none;
 }
+
 
 @keyframes fall {
   to {
@@ -102,31 +103,32 @@
     }
   }
 
-function createHeart() {
-  const hearts = ["🤍", "💗", "❤️", "💕", "💖"];
-  const heart = document.createElement("div");
-  heart.classList.add("heart");
+  window.onload = function () {
+    function createHeart() {
+      const hearts = ["🤍", "💗", "❤️", "💕", "💖"];
+      const heart = document.createElement("div");
+      heart.className = "heart";
+      heart.innerHTML = hearts[Math.floor(Math.random() * hearts.length)];
 
-  heart.innerHTML = hearts[Math.floor(Math.random() * hearts.length)];
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration = (3 + Math.random() * 3) + "s";
+      heart.style.fontSize = (14 + Math.random() * 22) + "px";
 
-  heart.style.left = Math.random() * 100 + "vw";
-  heart.style.animationDuration = (3 + Math.random() * 3) + "s";
-  heart.style.fontSize = (16 + Math.random() * 20) + "px";
+      document.body.appendChild(heart);
 
-  document.body.appendChild(heart);
+      setTimeout(() => {
+        heart.remove();
+      }, 6000);
+    }
 
-  setTimeout(() => {
-    heart.remove();
-  }, 6000);
-}
-
-
-setInterval(createHeart, 300);
-
+    setInterval(createHeart, 350);
+  };
 </script>
+
 
 
 </body>
 </html>
+
 
 
