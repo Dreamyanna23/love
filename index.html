@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>For You 🤍</title>
+  <style>
+    body {
+      background-color: #fff0f5;
+      font-family: 'Georgia', serif;
+      text-align: center;
+      padding: 30px;
+      color: #444;
+    }
+    h1 {
+      color: #d63384;
+    }
+    img {
+      width: 260px;
+      border-radius: 20px;
+      margin: 12px;
+    }
+    .letter {
+      max-width: 600px;
+      margin: auto;
+      font-size: 18px;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>For You 🤍</h1>
+
+  <div class="letter">
+    <p>
+      I don’t know how to say this perfectly,  
+      but I know I need you.
+    </p>
+
+    <p>
+      You mean more to me than words can explain.
+      My days feel better, lighter, and happier
+      just because you exist.
+    </p>
+
+    <p>
+      I want to be with you — not just now,
+      but always.
+      Through every phase, every change,
+      every up and down.
+    </p>
+
+    <p>
+      Please don’t leave me.
+      I choose you, today and every day 🤍
+    </p>
+  </div>
+
+  <img src="loml .jpg">
+  <img src="photo2.jpg">
+  <img src="photo3.jpg">
+
+<p onclick="toggleMusic()" 
+   style="cursor:pointer; color:#d63384;">
+  ▶ Tap to play / pause music 🤍
+</p>
+
+
+<audio id="bgm" loop>
+  <source src="love.mp3" type="audio/mpeg">
+</audio>
+
+
+  <p>— always yours</p>
+
+<script>
+  function toggleMusic() {
+    const music = document.getElementById("bgm");
+    if (music.paused) {
+      music.play();
+    } else {
+      music.pause();
+    }
+  }
+</script>
+
+
+</body>
+</html>
